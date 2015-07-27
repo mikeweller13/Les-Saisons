@@ -1,0 +1,26 @@
+/*
+1. need to create a 4 x 5 or a 5 by 4 layout for the cards.
+2. need to pick out a images for the following flush cute animals: Owl, lion, geese, wolfs,
+ants, crows, ferretts, flamingos, rhinoceroses, and monkeys.
+3. need to get an image for the back of the cards.
+
+*/
+div#memory_board{
+  background: #CCCCCC;
+  border: #999999 1px solid;
+  width: 800px;
+  height: 540px;
+  padding:24px;
+  margin: 0px auto;
+}
+
+div#memeory_board > div{
+  imag: Memory_card.png;
+  border: #000 1px solid;
+  width: 99px;
+  height: 165px;
+  float:left;
+  padding:20px;
+  margin: 10px auto;
+  cursor:pointer;
+}
