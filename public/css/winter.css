@@ -1,3 +1,13 @@
+body {
+  background-color: #ECDDC6;
+}
+
+#wrapper {
+  background-color: #5B201A;
+  border-radius: 15px;
+  height: 1000px;
+}
+
 h1 {
   font-family: "Berkshire Swash", cursive;
   font-size: 52px;
