@@ -1,4 +1,3 @@
-
 if (localStorage.saison) {
   var saison = JSON.parse(localStorage.saison);
 } else {
@@ -10,6 +9,7 @@ if (localStorage.saison) {
   var session = JSON.stringify(saison);
   localStorage.saison = session;
 };
+
 console.log("saison", localStorage.saison);
 if (saison.winter && saison.summer) {
   saison.spring = true;
