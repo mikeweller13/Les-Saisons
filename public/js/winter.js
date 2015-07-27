@@ -15,7 +15,7 @@ $.ajax({
 
 var saveGame = function() {
     var session = JSON.stringify(saison);
-    localStorage.saisons = session;
+    localStorage.saison = session;
 };
 
 //set the game state
@@ -130,7 +130,7 @@ Icebear.prototype.iceBearQuestion = function() {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id=\"hint\">Read the words carefully</h2>');
     };
-    $('#question').append('<input type ="number" id="input" required=true></input>');
+    $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
     $('#submit').on({'click': function() {
          var input = $('#input').val();
@@ -155,7 +155,7 @@ Icebear.prototype.fishQuestion = function() {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id=\"hint\">Fish avoid the bears and swim at the bottom of the sea.</h2>');
     };
-    $('#question').append('<input type="number" id="input" required=true></input>');
+    $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
     $('#submit').on({'click': function() {
         var input = $('#input').val();
@@ -179,7 +179,7 @@ Icebear.prototype.planktonQuestion = function() {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id=\"hint\">Plankton avoid the fish and swim through the water.</h2>');
     };
-    $('#question').append('<input type="number" id="input" required=true></input>');
+    $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
     $('#submit').on({'click': function() {
         var input = $('#input').val();
@@ -203,7 +203,7 @@ Icebear.prototype.holesQuestion = function() {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id=\"hint\">Bears are not always at every single hole in the ice.</h2>');
     };
-    $('#question').append('<input type="number" id="input" required=true></input>');
+    $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
     $('#submit').on({'click': function() {
         var input = $('#input').val();

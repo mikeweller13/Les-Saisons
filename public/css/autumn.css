@@ -1,29 +1,19 @@
-#summer {
+.season {
 position: relative;
 float: left;
-margin-top: 50px;
-margin-left: 10px;
-display: inline;
-}
-#autumn {
-position: relative;
-float: left;
-margin-top: 50px;
-margin-left: 10px;
-display: inline;
-}
-#spring {
-position: relative;
-float: left;
-margin-top: 50px;
-margin-left: 10px;
-display: inline;
-}
-#winter {
-position: relative;
-float: left;
-margin-top: 50px;
+margin-top: 0px;
 margin-right: 10px;
-display: inline;
 }
 
+h1 {
+  position: relative;
+}
+h2 {
+  position: relative;
+}
+#restart {
+  position:absolute;
+  bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
