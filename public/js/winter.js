@@ -13,6 +13,7 @@ $.ajax({
   console.log(err);
 });
 
+var winter=true;
 var summer=true;
 //if summer has been solved, hints are given.
 
@@ -33,11 +34,20 @@ var begin = function() {
     $('#hint-place').children().remove();
     if (summer) {
         $('#hint-place').append('<h2 id=\"hint\">   Now that I am free, I can help you solve the riddle.</h2>');
-        $('#hint-place').append('<img src=\"img/summer.png\""/>');
+        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summer.png\""/>');
+    } else {
+        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summerbw.png\""/>');
     };
     $('.erasable').children().remove();
-    $('#start-place').append('<img id=\"start\" src=\"img/winter.png\"/>');
+    if (winter) {
+        $('#start-place').append('<img id=\"start\" src=\"img/winter.png\"/>');
+    } else {
+        $('#start-place').append('<img id=\"start\" src=\"img/winterbw.png\"/>');
+    }
     $('#dice-place').append(newGameMessage);
+    $('#summer-link').on({'click': function() {
+        window.location.href = './summer.html';
+    }});
     $('#start').on({'click': function() {
       play.game();
     }});
