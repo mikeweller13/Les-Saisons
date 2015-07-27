@@ -3,19 +3,19 @@ body {
 }
 
 #wrapper {
-  background: #94342a;
-  background: -moz-linear-gradient(-45deg, #94342a 0%, #5b211a 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, #94342a), color-stop(100%, #5b211a));
-  background: -webkit-linear-gradient(-45deg, #94342a 0%, #5b211a 100%);
-  background: -o-linear-gradient(-45deg, #94342a 0%, #5b211a 100%);
-  background: -ms-linear-gradient(-45deg, #94342a 0%, #5b211a 100%);
-  background: linear-gradient(135deg, #94342a 0%, #5b211a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94342a', endColorstr='#5b211a', GradientType=1 );  border-radius: 15px;
+  background: #274e87;
+  background: -moz-linear-gradient(-45deg, #274e87 0%, #172e50 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #274e87), color-stop(100%, #172e50));
+  background: -webkit-linear-gradient(-45deg, #274e87 0%, #172e50 100%);
+  background: -o-linear-gradient(-45deg, #274e87 0%, #172e50 100%);
+  background: -ms-linear-gradient(-45deg, #274e87 0%, #172e50 100%);
+  background: linear-gradient(135deg, #274e87 0%, #172e50 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#274e87', endColorstr='#172e50', GradientType=1 );
+  border-radius: 15px;
   height: 1000px;
   margin: 60px;
   border: 2px dashed white;
-  box-shadow: 0 0 0 3px #94342a, 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
-
+  box-shadow: 0 0 0 3px #172E50, 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
 }
 
 h1 {
@@ -27,6 +27,13 @@ h1 {
 h2 {
   font-family: "Open Sans Condensed", sans-serif;
   color: white;
+}
+
+p {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 46px;
+  color: white;
+  margin-left: 250px;
 }
 
 li {
