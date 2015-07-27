@@ -1,0 +1,28 @@
+li {
+  display: inline;  
+}
+
+.dice { 
+  display: inline;
+  height: 100px;
+  width: 100px; 
+}
+
+.answer {
+  display: inline;
+}
+
+#hint-place {
+  position: relative;
+  float: right;
+  margin-right: 50px;
+  width: 300px;
+  max-width: 75%; 
+}
+
+#start-place {
+  position: relative;
+  float: left;
+  margin-top: 50px;
+
+}
