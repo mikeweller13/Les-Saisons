@@ -1,11 +1,20 @@
-li {
-  display: inline;  
+h1 {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 52px;
 }
 
-.dice { 
+h2 {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+li {
+  display: inline;
+}
+
+.dice {
   display: inline;
   height: 100px;
-  width: 100px; 
+  width: 100px;
 }
 
 .answer {
@@ -17,7 +26,7 @@ li {
   float: right;
   margin-right: 50px;
   width: 300px;
-  max-width: 75%; 
+  max-width: 75%;
 }
 
 #start-place {
