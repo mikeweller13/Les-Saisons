@@ -3,18 +3,30 @@ body {
 }
 
 #wrapper {
-  background-color: #5B201A;
-  border-radius: 15px;
+  background: #94342a;
+  background: -moz-linear-gradient(-45deg, #94342a 0%, #5b211a 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #94342a), color-stop(100%, #5b211a));
+  background: -webkit-linear-gradient(-45deg, #94342a 0%, #5b211a 100%);
+  background: -o-linear-gradient(-45deg, #94342a 0%, #5b211a 100%);
+  background: -ms-linear-gradient(-45deg, #94342a 0%, #5b211a 100%);
+  background: linear-gradient(135deg, #94342a 0%, #5b211a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94342a', endColorstr='#5b211a', GradientType=1 );  border-radius: 15px;
   height: 1000px;
+  margin: 60px;
+  border: 2px dashed white;
+  box-shadow: 0 0 0 3px #94342a, 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
+
 }
 
 h1 {
   font-family: "Berkshire Swash", cursive;
   font-size: 52px;
+  color: white;
 }
 
 h2 {
   font-family: "Open Sans Condensed", sans-serif;
+  color: white;
 }
 
 li {
