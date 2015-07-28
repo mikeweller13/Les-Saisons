@@ -14,7 +14,7 @@ div#memory_board{
   margin: 0px auto;
 }
 
-div#memeory_board > div{
+div.memory_cards > div{
   imag: Memory_card.png;
   border: #000 1px solid;
   width: 99px;

@@ -1,51 +1,52 @@
 
-var veneryPairs =
-  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+var card = function (cardNumber, identity, match) {
+this.cardNumber=cardNumber,
+this.identity=identity,
+this.match=match
+};
+var card1 = new card('card1', 'owl','card2');
+var card2 = new card('card2', 'parliament','card1');
+var card3 = new card('card3', 'lions','card4');
+var card4 = new card('card4', 'pride','card3');
+var card5 = new card('card5', 'geese','card6');
+var card6 = new card('card6', 'gaggle','card5');
+var card7 = new card('card7', 'wolf','card8');
+var card8 = new card('card8', 'pack','card7');
+var card9 = new card('card9', 'ants','card10');
+var card10 = new card('card10', 'colony','card9');
+var card11 = new card('card11', 'crows','card12');
+var card12 = new card('card12', 'murder','card11');
+var card13 = new card('card13', 'ferrets','card14');
+var card14 = new card('card14', 'business','card13');
+var card15 = new card('card15', 'flamingos','card16');
+var card16 = new card('card16', 'flamboience','card15');
+var card17 = new card('card17', 'rhinoceroses','card18');
+var card18 = new card('card18', 'crash','card17');
+var card19 = new card('card19', 'monkeys','card20');
+var card20 = new card('card20', 'barrel','card19');
 
-veneryPairs [0] = ['card1', 'owl', 'card2'];
-veneryPairs [1] = ['card2', 'parliament', 'card1'];
-veneryPairs [2] = ['card3', 'lions', 'card4'];
-veneryPairs [3] = ['card4', 'pride', 'card3'];
-veneryPairs [4] = ['card5', 'geese', 'card6'];
-veneryPairs [5] = ['card6', 'gaggle', 'card5'];
-veneryPairs [6] = ['card7', 'wolf', 'card8'];
-veneryPairs [7] = ['card8', 'pack', 'card7'];
-veneryPairs [8] = ['card9', 'ants', 'card10'];
-veneryPairs [9] = ['card10', 'colony', 'card9'];
-veneryPairs [10] = ['card11', 'crows', 'card12'];
-veneryPairs [11] = ['card12', 'murder', 'card11'];
-veneryPairs [12] = ['card13', 'ferrets', 'card14'];
-veneryPairs [13] = ['card14', 'business', 'card13'];
-veneryPairs [14] = ['card15', 'flamingos', 'card16'];
-veneryPairs [15] = ['card16', 'flamboience', 'card15'];
-veneryPairs [16] = ['card17', 'rhinoceroses', 'card18'];
-veneryPairs [17] = ['card18', 'crash', 'card17'];
-veneryPairs [18] = ['card19', 'monkeys', 'card20'];
-veneryPairs [19] = ['card20', 'barrel', 'card19'];
+var deck = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20 ];
 
-var memory_value = [];
-var memory_card_ids = [];
-var card_flipped = 0;
-
-Array.prototype.memory_card_shuffle = function(){
-  var i = this.length, j, temp;
+memory_card_shuffle = function(){
+  var i = deck.length, j, temp;
   while (--i > 0){
     j = Math.floor(Math.random() * (i + 1));
-    temp = this [j];
-    this [j] = this [i];
-    this [i] = temp;
+    temp = deck[j];
+    deck[j] = deck[i];
+    deck[i] = temp;
   }
 }
+memory_card_shuffle();
 
 function newBoard() {
   card_flipped = 0;
   var output = '';
-  veneryPairs.memory_card_shuffle ();
-  for(var i = 0; i < veneryPairs.length; i++) {
-    output += '<div id ="card_' + i + '" onclick = "memoryFilpCard (this, \' ' + veneryPairs[i] + '\')"></div> ';
+  // veneryPairs.memory_card_shuffle ();
+  for(var i = 0; i < deck.length; i++) {
+    output += '<div class =\"memory_cards\" onclick = "memoryFlipCard (' + deck[i].identity + ')"><img src=\"img/Memory_card.png\"></div> ';
   }
   $('#memory_board').html(output);
-}
+};
 
 newBoard();
 
