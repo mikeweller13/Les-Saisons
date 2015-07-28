@@ -41,12 +41,48 @@ memory_card_shuffle();
 function newBoard() {
   card_flipped = 0;
   var output = '';
-  // veneryPairs.memory_card_shuffle ();
+
+// veneryPairs.memory_card_shuffle and place into board
   for(var i = 0; i < deck.length; i++) {
-    output += '<div class =\"memory_cards\" onclick = "memoryFlipCard (' + deck[i].identity + ')"><img src=\"img/Memory_card.png\"></div> ';
+    switch (i % 4) {
+
+      case 0:
+      output = '<td><div class =\"memory_cards\" onclick = "memoryFlipCard (' + deck[i].identity + ')"><img class=\"pic\" src=\"img/Memory_card.png\"></div></td> ';
+      $('#row1').append(output);
+      console.log("case ", i);
+      break;
+
+      case 1:
+      output = '<td><div class =\"memory_cards\" onclick = "memoryFlipCard (' + deck[i].identity + ')"><img class=\"pic\" src=\"img/Memory_card.png\"></div></td> ';
+      $('#row2').append(output);
+      break;
+
+      case 2:
+      output = '<td><div class =\"memory_cards\" onclick = "memoryFlipCard (' + deck[i].identity + ')"><img class=\"pic\" src=\"img/Memory_card.png\"></div></td> ';
+      $('#row3').append(output);
+      break;
+
+      case 3:
+      output = '<td><div class =\"memory_cards\" onclick = "memoryFlipCard (' + deck[i].identity + ')"><img class=\"pic\" src=\"img/Memory_card.png\"></div></td> ';
+      $('#row4').append(output);
+      break;
+
+      default:
+      break;
+    }
   }
-  $('#memory_board').html(output);
 };
+
+//     if (i % 4 == 0) {
+//       $('#memory_board').append('<tr id=\"row' + i + '>');
+//     }
+//     output = '<td><div class =\"memory_cards\" onclick = "memoryFlipCard (' + deck[i].identity + ')"><img src=\"img/Memory_card.png\"></div></td> ';
+//     $('#memory_board').html(output);
+//     if (i % 4 == 0) {
+//       $('#memory_board').append('</tr>');
+//     }
+//   }
+// };
 
 newBoard();
 
