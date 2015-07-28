@@ -27,7 +27,7 @@ var memory_value = [];
 var memory_card_ids = [];
 var card_flipped = 0;
 
-Array.prototype.memory_card_shuffle = funtion(){
+Array.prototype.memory_card_shuffle = function(){
   var i = this.length, j, temp;
   while (--i > 0){
     j = Math.floor(Math.random() * (i + 1));
@@ -35,35 +35,40 @@ Array.prototype.memory_card_shuffle = funtion(){
     this [j] = this [i];
     this [i] = temp;
   }
-}function newBoard() {
+}
+
+function newBoard() {
   card_flipped = 0;
   var output = '';
-  memory_array.memory_card_shuffle ();
-  for(var i = 0; i < memeory_array.length; i++) {
-    output += '<div id ="card_' + i + '" onclick = "memeoryFilpCard (this, \' ' + memory_array[i] + '\')"></div> ';
+  veneryPairs.memory_card_shuffle ();
+  for(var i = 0; i < veneryPairs.length; i++) {
+    output += '<div id ="card_' + i + '" onclick = "memoryFilpCard (this, \' ' + veneryPairs[i] + '\')"></div> ';
   }
-  document.getElementById('memeory_board').innerHTML = output;
+  $('#memory_board').html(output);
 }
-window.addEventListener();
+
+newBoard();
+
+//  window.addEventListener();
 
 function memoryFlipCard(card, val){
   if(card.innerHTML == "" && memory_value.length < 2){
-    .innerHTML = val;
+    card.innerHTML = val;
     if(memory_value.length == 0) {
       memory_value.push(val);
-      memeory_card.ids.push(card.id);
+      memory_card.ids.push(card.id);
     } else if (memory_value.length == 1){
       memory_value.push(val);
-      memeory_card.ids.push(card.id);
-      if(memory_value [0] == memeory_values [1]){
+      memory_card.ids.push(card.id);
+      if(memory_value [0] == memory_values [1]){
         card_flipped += 2;
         //clear both arrays
-        memeory_values = [];
-        memeory_card_ids = [];
+        memory_values = [];
+        memory_card_ids = [];
         //check to see if the whole board is cleared
-        if (cards_flipped == memeory_array.length) {
+        if (cards_flipped == veneryPairs.length) {
           //move to Winter or Spring screen
-          document.get('memeory_board').innerHTML = "";
+          document.get('memory_board').innerHTML = "";
           newBoard();
         }
       } else {
@@ -71,9 +76,9 @@ function memoryFlipCard(card, val){
           //Flip the 2 cards back over
           var card_1 = document.getElementById(memory_card_ids [0]);
           var card_2 = document.getElementById(memory_card_ids [1]);
-          card_1.style.background = 'back of card image no-repleat';
+          card_1.style.background = 'back of card image no-repeat';
           card_1innerHTML = "";
-          card_2.style.background = 'back of card image no-repleat';
+          card_2.style.background = 'back of card image no-repeat';
           card_2innerHTML = "";
           //clear both arrays
           memory_values = [];
