@@ -1,6 +1,74 @@
-img {
+#summer-icon {
+  background-image: url("../img/summer.png");
   display: inline;
-  margin-right: 50px;
-/*  transform: rotate(-45deg);
-*/  transition: all 0.3s ease-in-out;
+}
+
+#autumn-icon {
+  background-image: url("../img/autumn.png");
+  display: inline;
+  margin-left: 250px;
+}
+
+#spring-icon {
+  background-image: url("../img/spring.png");
+  display: inline;
+  margin-left: 500px;
+}
+
+#winter-icon {
+  background-image: url("../img/winter.png");
+  display: inline-block;
+  margin-left: 750px;
+}
+
+.icon {
+  background-repeat: no-repeat;
+  height: 373px;
+  width: 200px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-in-out;
+  animation-name:icon;
+  -webkit-animation-name:icon;
+  bottom: 0;
+  animation-duration:1.2s;
+  animation-timing-function:ease;
+  animation-delay:0s;
+  animation-iteration-count:infinite;
+  animation-direction:normal;
+  animation-play-state:running;
+  -webkit-animation-duration:1.2s;
+  -webkit-animation-timing-function:ease;
+  -webkit-animation-delay:0s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-direction:normal;
+  -webkit-animation-play-state:running;
+  position:absolute;
+  left: 0;
+  z-index:1;
+  display: inline-block;
+}
+
+.icon:hover {
+  transform: scale(2.0);
+}
+
+.dancing-icon {
+  margin: 200px;
+  position: relative;
+}
+
+@keyframes icon {
+  0%   {top:0;transform:rotate(-15deg)}
+  10% {top:-25px;transform:rotate(0deg);}
+  50% {top:0;transform:rotate(15deg);}
+  60% {top:-25px;transform:rotate(0deg);}
+  100% {top:0;transform:rotate(-15deg);}
+}
+
+@-webkit-keyframes icon {
+  0%   {top:0;transform:rotate(-15deg)}
+  10% {top:-25px;transform:rotate(0deg);}
+  50% {top:0;transform:rotate(15deg);}
+  60% {top:-25px;transform:rotate(0deg);}
+  100% {top:0;transform:rotate(-15deg);}
 }
