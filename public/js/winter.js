@@ -15,7 +15,7 @@ $.ajax({
 
 var saveGame = function() {
     var session = JSON.stringify(saison);
-    localStorage.saisons = session;
+    localStorage.saison = session;
 };
 
 //set the game state
@@ -36,28 +36,31 @@ var newGameMessage = '<h2>Click to begin</h2>';
 
 var begin = function() {
 
-
     $('#hint-place').children().remove();
     if (saison.summer) {
         $('#hint-place').append('<h2 id=\"hint\">   Now that I am free, I can help you solve the riddle.</h2>');
-        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summer.png\""/>');
+        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summer.png\"/>');
     } else {
-        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summerbw.png\""/>');
+        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summerbw.png\"/>');
     };
     $('.erasable').children().remove();
+    $('#start-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
     if (saison.winter) {
         $('#start-place').append('<img id=\"start\" src=\"img/winter.png\"/>');
     } else {
         $('#start-place').append('<img id=\"start\" src=\"img/winterbw.png\"/>');
-    }
+    };
     $('#dice-place').append(newGameMessage);
     $('#summer-link').on({'click': function() {
         window.location.href = './summer.html';
     }});
+    $('#autumn-link').on({'click': function() {
+        window.location.href = './index.html';
+    }});
     $('#start').on({'click': function() {
       play.game();
     }});
-}
+};
 
 var Icebear = function () {
     this.dice = [];
@@ -130,7 +133,7 @@ Icebear.prototype.iceBearQuestion = function() {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id=\"hint\">Read the words carefully</h2>');
     };
-    $('#question').append('<input type ="number" id="input" required=true></input>');
+    $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
     $('#submit').on({'click': function() {
          var input = $('#input').val();
@@ -155,7 +158,7 @@ Icebear.prototype.fishQuestion = function() {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id=\"hint\">Fish avoid the bears and swim at the bottom of the sea.</h2>');
     };
-    $('#question').append('<input type="number" id="input" required=true></input>');
+    $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
     $('#submit').on({'click': function() {
         var input = $('#input').val();
@@ -179,7 +182,7 @@ Icebear.prototype.planktonQuestion = function() {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id=\"hint\">Plankton avoid the fish and swim through the water.</h2>');
     };
-    $('#question').append('<input type="number" id="input" required=true></input>');
+    $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
     $('#submit').on({'click': function() {
         var input = $('#input').val();
@@ -203,7 +206,7 @@ Icebear.prototype.holesQuestion = function() {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id=\"hint\">Bears are not always at every single hole in the ice.</h2>');
     };
-    $('#question').append('<input type="number" id="input" required=true></input>');
+    $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
     $('#submit').on({'click': function() {
         var input = $('#input').val();
