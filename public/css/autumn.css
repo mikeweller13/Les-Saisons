@@ -1,6 +1,10 @@
+#message {
+  position: relative;
+}
 .season {
 position: relative;
-float: left;
+/*float: left;*/
+display: inline;
 margin-top: 0px;
 margin-right: 10px;
 }
@@ -11,9 +15,8 @@ h1 {
 h2 {
   position: relative;
 }
-#restart {
-  position:absolute;
-  bottom: 50px;
+#reset {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
 }

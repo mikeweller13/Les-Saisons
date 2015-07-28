@@ -36,28 +36,31 @@ var newGameMessage = '<h2>Click to begin</h2>';
 
 var begin = function() {
 
-
     $('#hint-place').children().remove();
     if (saison.summer) {
         $('#hint-place').append('<h2 id=\"hint\">   Now that I am free, I can help you solve the riddle.</h2>');
-        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summer.png\""/>');
+        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summer.png\"/>');
     } else {
-        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summerbw.png\""/>');
+        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summerbw.png\"/>');
     };
     $('.erasable').children().remove();
+    $('#start-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
     if (saison.winter) {
         $('#start-place').append('<img id=\"start\" src=\"img/winter.png\"/>');
     } else {
         $('#start-place').append('<img id=\"start\" src=\"img/winterbw.png\"/>');
-    }
+    };
     $('#dice-place').append(newGameMessage);
     $('#summer-link').on({'click': function() {
         window.location.href = './summer.html';
     }});
+    $('#autumn-link').on({'click': function() {
+        window.location.href = './index.html';
+    }});
     $('#start').on({'click': function() {
       play.game();
     }});
-}
+};
 
 var Icebear = function () {
     this.dice = [];
