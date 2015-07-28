@@ -36,6 +36,13 @@ renderSeasons = function() {
   $('#winter').append('<img id=\"winter\" src=\"img/winterbw.png\"/>');
   };
   // win scenario
+  $('#spring').on({'click': function() {
+    if (saison.winter && saison.summer) {
+      saison.spring = true;
+      renderSeasons();
+    };
+  }});
+
   if (saison.spring){
     $('#spring').append('<img id=\"spring\" src=\"img/spring.png\"/>');
   } else {
