@@ -47,6 +47,8 @@ var begin = function() {
     $('.erasable').children().remove();
     if (saison.winter) {
         $('#start-place').append('<img id="start" src="img/winter.png"/>');
+        $('h1').show();
+        $('.poem').hide();
     } else {
         $('#start-place').append('<img id="start" src="img/winterbw.png"/>');
     }
@@ -119,7 +121,7 @@ Icebear.prototype.renderDice = function() {
     $('.erasable').children().remove();
     for (var i = 0; i < 5; i++) {
         console.log(this.dice[i]);
-    $('#dice-place').append('<li> <img class=\"dice\" src=\"' + pix[(this.dice[i])-1].link + '\"/></li>');
+    $('#dice-place').append('<li> <img class="dice" src="' + pix[(this.dice[i])-1].link + '"/></li>');
     }
 };
 
@@ -228,7 +230,7 @@ Icebear.prototype.winGame = function() {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id="hint">Thank you for setting us all free.</h2>');
     };
-    $('#question').append('<button type=button id="submit">FIN</button>');
+    $('#question').append('<button type=button id="submit" class="win">FIN</button>');
     $('#submit').on({'click': function() {
         newGameMessage='<h2 id="begin">Now, free my sister! (or click my portrait to play again.)</h2>';
         begin();
