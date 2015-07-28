@@ -32,7 +32,7 @@ if (localStorage.saison) {
 
 
 
-var newGameMessage = '<h2>Click to begin</h2>';
+var newGameMessage = '<h2 id="begin">Click my portrait to begin...</h2>';
 
 var begin = function() {
 
@@ -106,7 +106,7 @@ Icebear.prototype.roll = function() {
 
         default:
         fish +=1
-      } 
+      }
     }
     this.dice.push(bears,fish,plankton,holes);
     console.log(this.dice);
@@ -124,7 +124,7 @@ Icebear.prototype.renderDice = function() {
 };
 
 Icebear.prototype.iceBearQuestion = function() {
-    console.log("bears: ", play.dice[5])  
+    console.log("bears: ", play.dice[5])
     $('#question').append('<h3>How many polar bears do you see? </h3>');
     if (saison.summer) {
         $('#hint').remove();
@@ -150,7 +150,7 @@ Icebear.prototype.fishQuestion = function() {
     console.log("fish: ", play.dice[6]);
     $('#hint').children().remove();
     $('#question').children().remove();
-    $('#question').append('<h3>How many fish are in the sea? </h3>');
+    $('#question').append('<h3>How many fish are in the sea?</h3>');
     if (saison.summer) {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id=\"hint\">Fish avoid the bears and swim at the bottom of the sea.</h2>');
@@ -174,7 +174,7 @@ Icebear.prototype.fishQuestion = function() {
 Icebear.prototype.planktonQuestion = function() {
     console.log("plankton: ", play.dice[7]);
     $('#question').children().remove();
-    $('#question').append('<h3>What about the plankton? </h3>');
+    $('#question').append('<h3>What about the plankton?</h3>');
     if (saison.summer) {
         $('#hint').remove();
         $('#hint-place').prepend('<h2 id=\"hint\">Plankton avoid the fish and swim through the water.</h2>');
@@ -230,18 +230,18 @@ Icebear.prototype.winGame = function() {
     };
     $('#question').append('<button type=button id="submit">FIN</button>');
     $('#submit').on({'click': function() {
-        newGameMessage="<h2>Click to play again</h2>";
+        newGameMessage='<h2 id="begin">Now, free my sister! (or click my portrait to play again.)</h2>';
         begin();
     }});
 };
 
 Icebear.prototype.renderCorrectAnswer = function(picture, number, item) {
     console.log("rendering correct answer");
-    $('#answer').append('<img class=\"dice\" src=\"' + picture + '\"/><h4 class=\"answer\">' + number + ' ' + item + '</h4>');
+    $('#answer').append('<img class="dice" src="' + picture + '"/><h4 class="answer">' + number + ' ' + item + '</h4>');
 };
 
 Icebear.prototype.loseGame = function() {
-    newGameMessage = '<h2>Keep trying and you will understand</h2>';
+    newGameMessage = '<h2 id="begin">Keep trying and you will understand. Click my portrait to begin again.</h2>';
     play.dice = [];
     begin();
 };

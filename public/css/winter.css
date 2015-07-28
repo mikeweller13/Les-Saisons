@@ -1,5 +1,7 @@
+/* border and surrounding box */
 body {
   background-color: #ECDDC6;
+  width: 100%;
 }
 
 #wrapper {
@@ -12,28 +14,58 @@ body {
   background: linear-gradient(135deg, #274e87 0%, #172e50 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#274e87', endColorstr='#172e50', GradientType=1 );
   border-radius: 15px;
-  height: 1000px;
   margin: 60px;
   border: 2px dashed white;
   box-shadow: 0 0 0 3px #172E50, 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
+  padding: 50px;
+}
+
+/* main poem text */
+
+main {
+  margin-left: 25%;
 }
 
 h1 {
   font-family: "Berkshire Swash", cursive;
   font-size: 52px;
   color: white;
+  padding-bottom: 30px;
+  letter-spacing: 2px;
 }
 
-h2 {
-  font-family: "Open Sans Condensed", sans-serif;
-  color: white;
-}
-
-p {
+.poem {
+  position: relative;
   font-family: "Berkshire Swash", cursive;
-  font-size: 46px;
+  font-size: 32px;
   color: white;
-  margin-left: 250px;
+  line-height: 75px;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+#begin {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 22px;
+  color: white;
+  margin-top: 30px;
+}
+
+/* styles for dice game */
+
+h3 {
+  font-family: "Berkshire Swash", cursive;
+  color: white;
+  font-size: 32px;
+  line-height: 75px;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+h4 {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 18px;
+  color: white;
 }
 
 li {
@@ -44,6 +76,9 @@ li {
   display: inline;
   height: 100px;
   width: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px;
 }
 
 .answer {
@@ -53,14 +88,29 @@ li {
 #hint-place {
   position: relative;
   float: right;
-  margin-right: 50px;
-  width: 300px;
-  max-width: 75%;
+  transform: scale(0.9);
+/*  width: 300px;
+  max-width: 75%;*/
 }
 
 #start-place {
-  position: relative;
-  float: left;
-  margin-top: 50px;
-
+  position: absolute;
+  transform: scale(1.2);
+  margin-top: 30px;
+  -webkit-box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
+  -moz-box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
+  box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
 }
+
+
+/*
+#start {
+}
+
+#summer-link {
+  margin-top: 50px;
+}
+
+#question {
+  margin: 50px;
+}*/
