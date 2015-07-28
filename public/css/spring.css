@@ -1,0 +1,6 @@
+img {
+  display: inline;
+  margin-right: 50px;
+/*  transform: rotate(-45deg);
+*/  transition: all 0.3s ease-in-out;
+}
