@@ -195,6 +195,7 @@ function memoryFlipCard(chosenCard, picture, identifier) {
   }
 };
 
+//hints to winter.
 winGame = function() {
     $('#hint').remove();
     saison.summer = true;
@@ -212,4 +213,5 @@ winGame = function() {
         $('tr').children().remove();
         $('#submit').remove();
     }});
+
 };

@@ -55,6 +55,13 @@ $('#winter').on({'click': function() {
   window.location.href = './winter.html';
 }});
 
+if(saison.spring){
+  $('div#wrapper').on({'click': function() {
+    console.log('yo');
+  window.location.href = './spring.html';
+  }
+})};
+
 $('#reset').on({'click': function() {
   saison = {
     winter: false,
