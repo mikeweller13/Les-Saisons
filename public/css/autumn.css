@@ -11,13 +11,14 @@ body{
   background: -o-linear-gradient(-45deg, #97b6a7 0%, #7f998c 100%);
   background: -ms-linear-gradient(-45deg, #97b6a7 0%, #7f998c 100%);
   background: linear-gradient(135deg, #97b6a7 0%, #7f998c 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97b6a7', endColorstr='#7f998c', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97b6a7', endColorstr='#7f998c', GradientType=1 );
   border-radius: 15px;
   margin: 10px 40px 40px 40px;
   border: 2px dashed white;
   box-shadow: 0 0 0 3px #97b6a7, 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
   padding: 40px;
   overflow: auto;
+  width: 88%;
 }
 
 #message {
@@ -27,14 +28,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97b6a7', end
   color: white;
   line-height:  50px;
   font-style: italic;
-  letter-spacing: 2px;
 }
+
 .season {
 position: relative;
-/*float: left;*/
 display: inline;
-margin-top: 0px;
-margin-right: 10px;
 }
 
 h1 {
@@ -42,14 +40,13 @@ h1 {
   font-family: "Berkshire Swash", cursive;
   font-size: 52px;
   color: black;
-  padding-bottom: 30px;
-  letter-spacing: 2px;
 }
 
 h2 {
   position: relative;
   color: black;
 }
+
 #reset {
   position: relative;
   margin-left: auto;
