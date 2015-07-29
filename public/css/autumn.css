@@ -1,5 +1,33 @@
+body{
+  background-color: #ECDDC6;
+  width: 100%;
+}
+
+#wrapper {
+  background: #97b6a7;
+  background: -moz-linear-gradient(-45deg, #97b6a7 0%, #7f998c 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #97b6a7), color-stop(100%, #7f998c));
+  background: -webkit-linear-gradient(-45deg, #97b6a7 0%, #7f998c 100%);
+  background: -o-linear-gradient(-45deg, #97b6a7 0%, #7f998c 100%);
+  background: -ms-linear-gradient(-45deg, #97b6a7 0%, #7f998c 100%);
+  background: linear-gradient(135deg, #97b6a7 0%, #7f998c 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97b6a7', endColorstr='#7f998c', GradientType=1 );
+  border-radius: 15px;
+  margin: 10px 40px 40px 40px;
+  border: 2px dashed white;
+  box-shadow: 0 0 0 3px #97b6a7, 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  overflow: auto;
+}
+
 #message {
   position: relative;
+  font-family: "Berkshire Swash", cursive;
+  font-size: 32px;
+  color: white;
+  line-height:  50px;
+  font-style: italic;
+  letter-spacing: 2px;
 }
 .season {
 position: relative;
@@ -11,12 +39,25 @@ margin-right: 10px;
 
 h1 {
   position: relative;
+  font-family: "Berkshire Swash", cursive;
+  font-size: 52px;
+  color: black;
+  padding-bottom: 30px;
+  letter-spacing: 2px;
 }
+
 h2 {
   position: relative;
+  color: black;
 }
 #reset {
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Open sans condensed", sans-serif;
+  font-size: 25px;
+  background-color: #ECDDC6;
+  height: 60px;
+  width: 75px;
+  display: center;
 }
