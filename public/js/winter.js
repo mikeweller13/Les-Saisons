@@ -247,6 +247,7 @@ Icebear.prototype.renderCorrectAnswer = function(picture, number, item) {
 
 Icebear.prototype.loseGame = function() {
     newGameMessage = '<h2 id="begin">Keep trying and you will understand. Click my portrait to begin again.</h2>';
+    $(".poem").hide();
     play.dice = [];
     begin();
 };
