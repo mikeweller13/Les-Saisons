@@ -23,10 +23,6 @@ body {
 
 /* main poem text */
 
-/*main {
-  margin-left: 100px;
-}*/
-
 h1 {
   font-family: "Berkshire Swash", cursive;
   font-size: 52px;
@@ -107,5 +103,8 @@ li {
 
 h2 {
   font-style: "Open Sans Condensed", sans-serif;
-  width: ;
+}
+
+.win {
+  float:right;
 }
