@@ -32,24 +32,26 @@ if (localStorage.saison) {
 
 
 
-var newGameMessage = '<h2>Click to begin</h2>';
+var newGameMessage = '<h2 id="begin">Click my portrait to begin...</h2>';
 
 var begin = function() {
 
     $('#hint-place').children().remove();
     if (saison.summer) {
-        $('#hint-place').append('<h2 id=\"hint\">   Now that I am free, I can help you solve the riddle.</h2>');
-        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summer.png\"/>');
+        $('#hint-place').append('<h2 id="hint">Now that I am free, I can help you solve the riddle.</h2>');
+        $('#hint-place').append('<img id="summer-link" src="img/summer.png"/>');
     } else {
-        $('#hint-place').append('<img id=\"summer-link\" src=\"img/summerbw.png\"/>');
+        $('#hint-place').append('<img id="summer-link" src="img/summerbw.png"/>');
     };
     $('.erasable').children().remove();
     $('#start-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
     if (saison.winter) {
-        $('#start-place').append('<img id=\"start\" src=\"img/winter.png\"/>');
+        $('#start-place').append('<img id="start" src="img/winter.png"/>');
+        $('h1').show();
+        $('.poem').hide();
     } else {
-        $('#start-place').append('<img id=\"start\" src=\"img/winterbw.png\"/>');
-    };
+        $('#start-place').append('<img id="start" src="img/winterbw.png"/>');
+    }
     $('#dice-place').append(newGameMessage);
     $('#summer-link').on({'click': function() {
         window.location.href = './summer.html';
@@ -109,7 +111,7 @@ Icebear.prototype.roll = function() {
 
         default:
         fish +=1
-      } 
+      }
     }
     this.dice.push(bears,fish,plankton,holes);
     console.log(this.dice);
@@ -122,16 +124,16 @@ Icebear.prototype.renderDice = function() {
     $('.erasable').children().remove();
     for (var i = 0; i < 5; i++) {
         console.log(this.dice[i]);
-    $('#dice-place').append('<li> <img class=\"dice\" src=\"' + pix[(this.dice[i])-1].link + '\"/></li>');
+    $('#dice-place').append('<li> <img class="dice" src="' + pix[(this.dice[i])-1].link + '"/></li>');
     }
 };
 
 Icebear.prototype.iceBearQuestion = function() {
-    console.log("bears: ", play.dice[5])  
+    console.log("bears: ", play.dice[5])
     $('#question').append('<h3>How many polar bears do you see? </h3>');
     if (saison.summer) {
         $('#hint').remove();
-        $('#hint-place').prepend('<h2 id=\"hint\">Read the words carefully</h2>');
+        $('#hint-place').prepend('<h2 id="hint">Read the words carefully</h2>');
     };
     $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
@@ -153,10 +155,10 @@ Icebear.prototype.fishQuestion = function() {
     console.log("fish: ", play.dice[6]);
     $('#hint').children().remove();
     $('#question').children().remove();
-    $('#question').append('<h3>How many fish are in the sea? </h3>');
+    $('#question').append('<h3>How many fish are in the sea?</h3>');
     if (saison.summer) {
         $('#hint').remove();
-        $('#hint-place').prepend('<h2 id=\"hint\">Fish avoid the bears and swim at the bottom of the sea.</h2>');
+        $('#hint-place').prepend('<h2 id="hint">Fish avoid the bears and swim at the bottom of the sea.</h2>');
     };
     $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
@@ -177,10 +179,10 @@ Icebear.prototype.fishQuestion = function() {
 Icebear.prototype.planktonQuestion = function() {
     console.log("plankton: ", play.dice[7]);
     $('#question').children().remove();
-    $('#question').append('<h3>What about the plankton? </h3>');
+    $('#question').append('<h3>What about the plankton?</h3>');
     if (saison.summer) {
         $('#hint').remove();
-        $('#hint-place').prepend('<h2 id=\"hint\">Plankton avoid the fish and swim through the water.</h2>');
+        $('#hint-place').prepend('<h2 id="hint">Plankton avoid the fish and swim through the water.</h2>');
     };
     $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
@@ -204,7 +206,7 @@ Icebear.prototype.holesQuestion = function() {
     $('#question').append('<h3>Of course you know how many holes are in the ice.</h3>');
     if (saison.summer) {
         $('#hint').remove();
-        $('#hint-place').prepend('<h2 id=\"hint\">Bears are not always at every single hole in the ice.</h2>');
+        $('#hint-place').prepend('<h2 id="hint">Bears are not always at every single hole in the ice.</h2>');
     };
     $('#question').append('<input type="text" id="input" required=true></input>');
     $('#question').append('<button type=button id="submit">?</button>');
@@ -229,22 +231,22 @@ Icebear.prototype.winGame = function() {
     $('#question').append('<h3>Congratulations on solving the riddle. Winter is free.</h3>')
     if (saison.summer) {
         $('#hint').remove();
-        $('#hint-place').prepend('<h2 id=\"hint\">Thank you for setting us all free.</h2>');
+        $('#hint-place').prepend('<h2 id="hint">Thank you for setting us all free.</h2>');
     };
-    $('#question').append('<button type=button id="submit">FIN</button>');
+    $('#question').append('<button type=button id="submit" class="win">FIN</button>');
     $('#submit').on({'click': function() {
-        newGameMessage="<h2>Click to play again</h2>";
+        newGameMessage='<h2 id="begin">Now, free my sister! (or click my portrait to play again.)</h2>';
         begin();
     }});
 };
 
 Icebear.prototype.renderCorrectAnswer = function(picture, number, item) {
     console.log("rendering correct answer");
-    $('#answer').append('<img class=\"dice\" src=\"' + picture + '\"/><h4 class=\"answer\">' + number + ' ' + item + '</h4>');
+    $('#answer').append('<img class="dice" src="' + picture + '"/><h4 class="answer">' + number + ' ' + item + '</h4>');
 };
 
 Icebear.prototype.loseGame = function() {
-    newGameMessage = '<h2>Keep trying and you will understand</h2>';
+    newGameMessage = '<h2 id="begin">Keep trying and you will understand. Click my portrait to begin again.</h2>';
     play.dice = [];
     begin();
 };
