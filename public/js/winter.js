@@ -80,6 +80,7 @@ Icebear.prototype.roll = function() {
     var fish = 0;
     var plankton = 0;
     var holes = 0;
+    this.dice = [];
     for (var i = 0; i < 5; i++) {
       this.dice[i]=Math.floor(Math.random()*6 +1);
       switch (this.dice[i]) {
@@ -104,13 +105,14 @@ Icebear.prototype.roll = function() {
         break;
 
         case 5:
-        bears+=4
-        plankton+=14
-        holes+=1
+        bears+=4;
+        plankton+=14;
+        holes+=1;
         break;
 
-        default:
-        fish +=1
+        case 6:
+        fish +=1;
+        break;
       }
     }
     this.dice.push(bears,fish,plankton,holes);
