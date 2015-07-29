@@ -102,9 +102,6 @@ li {
 /* styles for hint */
 
 h2 {
-  font-style: "Open Sans Condensed", sans-serif;
-}
-
-.win {
-  float:right;
+  font-family: "Open Sans Condensed", sans-serif;
+  color: white;
 }
