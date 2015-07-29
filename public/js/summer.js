@@ -127,7 +127,7 @@ function memoryFlipCard(chosenCard, picture, identifier) {
         getHint = function (ID) {
           switch (ID) {
             case 'one':
-            hint = 'Owls travel in Parliaments' 
+            hint = 'Owls travel in Parliaments'
             break;
             case 'two':
             hint = "Lions travel in Prides";
@@ -193,6 +193,7 @@ function memoryFlipCard(chosenCard, picture, identifier) {
   }
 };
 
+//hints to winter.
 winGame = function() {
     $('#hint').remove();
     saison.summer = true;
