@@ -1,3 +1,31 @@
+body{
+  background-color: #ECDDC6;
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+  font-family: "Berkshire Swash";
+
+}
+#wrapper{
+background: #f1e767;
+background: -moz-linear-gradient(-45deg, #f1e767 0%, #94c9a3 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, #f1e767), color-stop(100%, #94c9a3));
+background: -webkit-linear-gradient(-45deg, #f1e767 0%, #94c9a3 100%);
+background: -o-linear-gradient(-45deg, #f1e767 0%, #94c9a3 100%);
+background: -ms-linear-gradient(-45deg, #f1e767 0%, #94c9a3 100%);
+background: linear-gradient(135deg, #f1e767 0%, #94c9a3 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#94c9a3', GradientType=1 );
+border-radius: 15px;
+  margin: 10px 40px 40px 40px;
+  border: 2px dashed white;
+  box-shadow: 0 0 0 3px #94C9A3, 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
+  padding: 40px;
+ /* overflow: auto;*/
+  height: 600px;
+}
+
 #summer-icon {
   background-image: url("../img/summer.png");
   display: inline;

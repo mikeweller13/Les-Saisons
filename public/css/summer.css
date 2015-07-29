@@ -1,3 +1,7 @@
+body{
+  background-color: #ECDDC6;
+  width: 100%;
+}
 div#memory_board{
   background: #CCCCCC;
   border: #999999 1px solid;
@@ -6,14 +10,28 @@ div#memory_board{
   padding:24px;
   margin: 0px auto;
 }
+#wrapper {
+background: #e58873;
+background: -moz-linear-gradient(-45deg, #e58873 0%, #c07160 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, #e58873), color-stop(100%, #c07160));
+background: -webkit-linear-gradient(-45deg, #e58873 0%, #c07160 100%);
+background: -o-linear-gradient(-45deg, #e58873 0%, #c07160 100%);
+background: -ms-linear-gradient(-45deg, #e58873 0%, #c07160 100%);
+background: linear-gradient(135deg, #e58873 0%, #c07160 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e58873', endColorstr='#c07160', GradientType=1 );
+  border-radius: 15px;
+  margin: 10px 40px 40px 40px;
+  border: 2px dashed white;
+  box-shadow: 0 0 0 3px #e58873, 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  overflow: auto;
+}
 #start-place {
   float: left;
   position: relative;
   margin-left: 20px;
   transform: scale(0.9);
-  -webkit-box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
-  -moz-box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
-  box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
+
 }
 #game {
   position:relative;
@@ -24,7 +42,7 @@ td {
   width: 99px;
   height: 99px;
   margin: 10px auto;
-  border: #000 1px solid;  
+  border: #000 1px solid;
 }
 .memory_cards{
   position: relative;
