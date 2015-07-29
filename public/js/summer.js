@@ -118,7 +118,7 @@ newBoard();
 function memoryFlipCard(chosenCard, picture, identifier) {
   while ((cardIDs[0] !== chosenCard) && (cardValues.length < 2)) {
   $('#' + chosenCard).children().remove();
-  $('#' + chosenCard).append('<h5>' + picture + '</h5>');
+  $('#' + chosenCard).append('<h5><img class="animal-card" src=\"img/' + picture + '.png\"/></h5>');
     if(cardValues.length == 0) {
       cardValues.push(identifier);
       cardIDs.push(chosenCard);

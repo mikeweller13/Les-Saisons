@@ -1,11 +1,17 @@
-div#memory_board{
+/*div#memory_board{
   background: #CCCCCC;
   border: #999999 1px solid;
   width: 800px;
   height: 540px;
   padding:24px;
   margin: 0px auto;
+}*/
+.animal-card {
+position: absolute;
+top: 0px;
+background-color: #7a9f76;
 }
+
 #start-place {
   float: left;
   position: relative;
@@ -24,6 +30,7 @@ td {
   width: 99px;
   height: 99px;
   margin: 10px auto;
+  padding: 4px;
   border: #000 1px solid;  
 }
 .memory_cards{
