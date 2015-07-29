@@ -210,6 +210,6 @@ winGame = function() {
     $('#submit').on({'click': function() {
         portraits();
         $('tr').children().remove();
-        newBoard();
+        $('#submit').remove();
     }});
 };
