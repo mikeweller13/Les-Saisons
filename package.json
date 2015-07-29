@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "repo for the codefellows bootcamp B31 (Lyle, Heidi, Ryan and Tami)",
   "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.1"
+  },
+  "devDependinces":{},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,18 +14,10 @@
     "type": "git",
     "url": "git+https://github.com/tamilove/Les-Saisons.git"
   },
-  "keywords": [
-    "les_saisons",
-    "game",
-    "dice"
-  ],
   "author": "Lyle",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/tamilove/Les-Saisons/issues"
   },
   "homepage": "https://github.com/tamilove/Les-Saisons#readme",
-  "dependencies": {
-    "express": "^4.13.1"
-  }
 }
