@@ -57,7 +57,7 @@ memory_card_shuffle = function(){
 };
 portraits = function() {
   $('#start-place').children().remove();
-  $('#start-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
+  // $('#start-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
     if (saison.summer) {
         $('#start-place').append('<img id="start" src="img/summer.png"/>');
     } else {

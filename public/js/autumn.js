@@ -18,7 +18,7 @@ renderSeasons = function() {
   if (saison.spring) {
     $('#message').append('<h2>Thank you so much! We are reunited.                              </h2>');
   } else {
-    $('#message').append('<h2>I am without my sisters. Please reunite us. Solve the puzzles so we can all be together.</h2>');
+    $('#message').append('<h2>I am without my sisters. Please reunite us. </br>Solve the puzzles so we can all be together. </br>Only then can we unlock our youngest sister, Spring.</h2>');
   };
   // render b&w or color summer/winter based on whether puzzle was solved
   $('#autumn').append('<img id=\"autumn\" src=\"img/autumn.png\"/>');
@@ -59,7 +59,7 @@ $('#reset').on({'click': function() {
   saison = {
     winter: false,
     summer: false,
-    spring: false  
+    spring: false
   };
   session = JSON.stringify(saison);
   localStorage.saison = session;
