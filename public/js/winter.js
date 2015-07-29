@@ -44,7 +44,7 @@ var begin = function() {
         $('#hint-place').append('<img id="summer-link" src="img/summerbw.png"/>');
     };
     $('.erasable').children().remove();
-    $('#start-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
+    // $('#start-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
     if (saison.winter) {
         $('#start-place').append('<img id="start" src="img/winter.png"/>');
         $('h1').show();
@@ -235,7 +235,7 @@ Icebear.prototype.winGame = function() {
     };
     $('#question').append('<button type=button id="submit" class="win">FIN</button>');
     $('#submit').on({'click': function() {
-        newGameMessage='<h2 id="begin">Now, free my sister! (or click my portrait to play again.)</h2>';
+        newGameMessage='<h2 id="begin">Thank you! I\'m free</h2>';
         begin();
     }});
 };
