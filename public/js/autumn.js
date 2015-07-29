@@ -11,9 +11,6 @@ if (localStorage.saison) {
 };
 
 console.log("saison", localStorage.saison);
-if (saison.winter && saison.summer) {
-  saison.spring = true;
-};
 
 renderSeasons = function() {
   $('#message').children().remove();

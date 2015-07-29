@@ -23,10 +23,10 @@ body {
 
 /* main poem text */
 
-main {
+/*main {
   margin-left: 25%;
 }
-
+*/
 h1 {
   font-family: "Berkshire Swash", cursive;
   font-size: 52px;
@@ -93,10 +93,15 @@ li {
 }
 
 #start-place {
+  float: left;
   position: absolute;
   margin-left: 20px;
   transform: scale(1.18);
   -webkit-box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
   -moz-box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
   box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
+}
+
+.win {
+  float:right;
 }
