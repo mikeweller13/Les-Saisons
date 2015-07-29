@@ -32,7 +32,7 @@ if (localStorage.saison) {
 
 
 
-var newGameMessage = '<h2 id="begin">Click my portrait to begin...</h2>';
+var newGameMessage = '<h2 id="begin">Click my portrait to begin... </br></br>Count the numbers on the dice.</h2>';
 
 var begin = function() {
 
