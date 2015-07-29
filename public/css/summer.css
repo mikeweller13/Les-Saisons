@@ -26,12 +26,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e58873', end
   float: left;
   position: relative;
   margin-left: 0px;
-  transform: scale(0.9);
-
 }
+#autumn-link {
+  transform: scale(0.9);
+}
+
+#instructions {
+  position: absolute;
+  max-width: 200px;
+  display: inline;
+}
+
 #game {
   position:relative;
   float:left;
+  display: inline;
 }
 td {
   position: relative;
@@ -55,6 +64,7 @@ td {
 }
 
 #hint-place {
+  margin: 10px;
   width: 200px;
   position: relative;
   float: right;
@@ -64,4 +74,17 @@ td {
 #question {
   position: relative;
   float:left;
+}
+h1 {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 52px;
+  color: white;
+  padding-bottom: 30px;
+}
+h2 {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 22px;
+  color: white;
+  margin-top: 30px;
+  float: left;
 }

@@ -63,6 +63,10 @@ portraits = function() {
     } else {
         $('#start-place').append('<img id="start" src="img/summerbw.png"/>');
     }
+    $('#start').on({'click': function() {
+      $('.erasable').children().remove();
+      newBoard();
+    }})
     $('#winter-link').on({'click': function() {
         window.location.href = './winter.html';
     }});
@@ -70,13 +74,11 @@ portraits = function() {
         window.location.href = './index.html';
     }});
 }
-memory_card_shuffle();
 portraits();
 function newBoard() {
+  memory_card_shuffle();
   cardsFlipped = 0;
   var output = '';
-
-// veneryPairs.memory_card_shuffle and place into board
   for(var i = 0; i < deck.length; i++) {
     output = '<td><div id=\"' + deck[i].cardNumber + '\" class =\"memory_cards\" onclick = \"memoryFlipCard(deck[' + i + '].cardNumber, deck[' + i + '].identity, deck[' + i + '].match)\"><img class=\"pic\" src=\"img/Memory_card.png\"></div></td> ';
     switch (i % 4) {
@@ -114,7 +116,7 @@ $('#autumn-link').on({'click': function() {
   window.location.href = './index.html';
 }});
 
-newBoard();
+// newBoard();
 function memoryFlipCard(chosenCard, picture, identifier) {
   while ((cardIDs[0] !== chosenCard) && (cardValues.length < 2)) {
   $('#' + chosenCard).children().remove();
