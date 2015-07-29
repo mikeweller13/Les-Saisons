@@ -6,17 +6,46 @@ div#memory_board{
   padding:24px;
   margin: 0px auto;
 }
-
+#start-place {
+  float: left;
+  position: relative;
+  margin-left: 20px;
+  transform: scale(0.9);
+  -webkit-box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
+  -moz-box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
+  box-shadow: 0px 0px 90px -22px rgba(255,255,255,1);
+}
+#game {
+  position:relative;
+  float:left;
+}
+td {
+  position: relative;
+  width: 99px;
+  height: 99px;
+  margin: 10px auto;
+  border: #000 1px solid;  
+}
 .memory_cards{
   position: relative;
-  border: #000 1px solid;
   width: 99px;
   height: 99px;
   float: left;
-  margin: 10px auto;
   cursor: pointer;
 }
 .pic{
   height: 99px;
   width: 99px;
+}
+
+#hint-place {
+  width: 200px;
+  position: relative;
+  float: right;
+  transform: scale(0.9);
+}
+
+#question {
+  position: relative;
+  float:left;
 }

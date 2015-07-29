@@ -1,29 +1,44 @@
+var saveGame = function() {
+    var session = JSON.stringify(saison);
+    localStorage.saison = session;
+};
+
+if (localStorage.saison) {
+  var saison = JSON.parse(localStorage.saison);
+} else {
+  var saison = {
+    winter: false,
+    summer: false,
+    spring: false
+};
+  saveGame();
+};
 
 var Card = function (cardNumber, identity, match) {
 this.cardNumber=cardNumber,
 this.identity=identity,
 this.match=match
 };
-var card1 = new Card('card1', 'owl','card2');
-var card2 = new Card('card2', 'parliament','card1');
-var card3 = new Card('card3', 'lions','card4');
-var card4 = new Card('card4', 'pride','card3');
-var card5 = new Card('card5', 'geese','card6');
-var card6 = new Card('card6', 'gaggle','card5');
-var card7 = new Card('card7', 'wolf','card8');
-var card8 = new Card('card8', 'pack','card7');
-var card9 = new Card('card9', 'ants','card10');
-var card10 = new Card('card10', 'colony','card9');
-var card11 = new Card('card11', 'crows','card12');
-var card12 = new Card('card12', 'murder','card11');
-var card13 = new Card('card13', 'ferrets','card14');
-var card14 = new Card('card14', 'business','card13');
-var card15 = new Card('card15', 'flamingos','card16');
-var card16 = new Card('card16', 'flamboience','card15');
-var card17 = new Card('card17', 'rhinoceroses','card18');
-var card18 = new Card('card18', 'crash','card17');
-var card19 = new Card('card19', 'monkeys','card20');
-var card20 = new Card('card20', 'barrel','card19');
+var card1 = new Card('card1', 'Owls','one');
+var card2 = new Card('card2', 'Parliament','one');
+var card3 = new Card('card3', 'Lions','two');
+var card4 = new Card('card4', 'Pride','two');
+var card5 = new Card('card5', 'Geese','three');
+var card6 = new Card('card6', 'Gaggle','three');
+var card7 = new Card('card7', 'Wolves','four');
+var card8 = new Card('card8', 'Pack','four');
+var card9 = new Card('card9', 'Ants','five');
+var card10 = new Card('card10', 'Army','five');
+var card11 = new Card('card11', 'Crows','six');
+var card12 = new Card('card12', 'Murder','six');
+var card13 = new Card('card13', 'Ferrets','seven');
+var card14 = new Card('card14', 'Business','seven');
+var card15 = new Card('card15', 'Flamingoes','eight');
+var card16 = new Card('card16', 'Flamboyance','eight');
+var card17 = new Card('card17', 'Rhinoceroses','nine');
+var card18 = new Card('card18', 'Crash','nine');
+var card19 = new Card('card19', 'Monkies','ten');
+var card20 = new Card('card20', 'Barrel','ten');
 
 var deck = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20 ];
 var cardValues = [];
@@ -38,10 +53,25 @@ memory_card_shuffle = function(){
     deck[j] = deck[i];
     deck[i] = temp;
   }
+  console.log(deck);
 };
-
+portraits = function() {
+  $('#start-place').children().remove();
+  $('#start-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
+    if (saison.summer) {
+        $('#start-place').append('<img id="start" src="img/summer.png"/>');
+    } else {
+        $('#start-place').append('<img id="start" src="img/summerbw.png"/>');
+    }
+    $('#winter-link').on({'click': function() {
+        window.location.href = './winter.html';
+    }});
+    $('#autumn-link').on({'click': function() {
+        window.location.href = './index.html';
+    }});
+}
 memory_card_shuffle();
-
+portraits();
 function newBoard() {
   cardsFlipped = 0;
   var output = '';
@@ -70,46 +100,114 @@ function newBoard() {
   }
 };
 
+$('#hint-place').children().remove();
+if (saison.winter) {
+  $('#hint-place').append('<img id="winter-link" src="img/winter.png"/>');
+  $('#hint-place').append('<h2 id="hint">Now that I am free, I can help you solve the puzzle.</h2>');
+} else {
+  $('#hint-place').append('<img id="winter-link" src="img/winterbw.png"/>');
+};
+$('#winter-link').on({'click': function() {
+  window.location.href = './winter.html';
+}});
+$('#autumn-link').on({'click': function() {
+  window.location.href = './index.html';
+}});
+
 newBoard();
-
-function memoryFlipCard(chosenCard, picture, partner) {
-//does not successfully check if it's clicking the same card.
-  if (($('#' + chosenCard)) && cardValues.length < 2){
-
+function memoryFlipCard(chosenCard, picture, identifier) {
+  while ((cardIDs[0] !== chosenCard) && (cardValues.length < 2)) {
   $('#' + chosenCard).children().remove();
   $('#' + chosenCard).append('<h5>' + picture + '</h5>');
     if(cardValues.length == 0) {
-      cardValues.push(chosenCard);
-      cardIDs.push(partner);
-    } else if (cardValues.length == 1){
-      cardValues.push(chosenCard);
-      cardIDs.push(partner);
-//       if(cardsFlipped [0] == memory_values [1]){
-//         card_flipped += 2;
-//         //clear both arrays
-//         memory_values = [];
-//         memory_card_ids = [];
-//         //check to see if the whole board is cleared
-//         if (cards_flipped == veneryPairs.length) {
-//           //move to Winter or Spring screen
-//           document.get('memory_board').innerHTML = "";
-//           newBoard();
-//         }
-//       } else {
-//         function flip2Back(){
-//           //Flip the 2 cards back over
-//           var card_1 = document.getElementById(memory_card_ids [0]);
-//           var card_2 = document.getElementById(memory_card_ids [1]);
-//           card_1.style.background = 'back of card image no-repeat';
-//           card_1innerHTML = "";
-//           card_2.style.background = 'back of card image no-repeat';
-//           card_2innerHTML = "";
-//           //clear both arrays
-//           memory_values = [];
-//           memory_card_ids = [];
-//         }
-//         setTimeout(flip2Back, 900);
-      // }
+      cardValues.push(identifier);
+      cardIDs.push(chosenCard);
+      if (saison.winter) {
+        hint = '';
+        getHint = function (ID) {
+          switch (ID) {
+            case 'one':
+            hint = 'Owls travel in Parliaments' 
+            break;
+            case 'two':
+            hint = "Lions travel in Prides";
+            break;
+            case 'three':
+            hint = "Geese travel in Gaggles";
+            break;
+            case 'four':
+            hint = "Wolves travel in Packs";
+            break;
+            case 'five':
+            hint = "Ants travel in Armies";
+            break;
+            case 'six':
+            hint = "Crows travel in Murders";
+            break;
+            case 'seven':
+            hint = "Ferrets travel in Businesses";
+            break;
+            case 'eight':
+            hint = "Flamingoes travel in Flamboyances"
+            break;
+            case 'nine':
+            hint = "Rhinoceroses travel in Crashes";
+            break;
+            case 'ten':
+            hint = "Monkies travel in Barrels";
+            break;
+            default:
+            break;
+          }
+        };
+        getHint(identifier);
+        $('#hint').remove();
+        $('#hint-place').append('<h2 id="hint">' + hint + '</h2>');
+      }
+    } else if (cardValues.length == 1) {
+      cardValues.push(identifier);
+      cardIDs.push(chosenCard);
+      if (cardValues[0] == cardValues[1]) {
+        $('#' + cardIDs[0]).children().unwrap();
+        $('#' + cardIDs[1]).children().unwrap();
+        cardsFlipped += 2;
+        cardValues = [];
+        cardIDs = [];
+        if (cardsFlipped == deck.length) {
+          $('#hint').remove();
+          winGame();
+          break;
+        }
+      } else {
+        function flip2Back(){
+          $('#' + cardIDs[0]).children().remove();
+          $('#' + cardIDs[0]).append('<img class=\"pic\" src=\"img/Memory_card.png\">')
+          $('#' + cardIDs[1]).children().remove();
+          $('#' + cardIDs[1]).append('<img class=\"pic\" src=\"img/Memory_card.png\">')
+          cardValues = [];
+          cardIDs = [];
+        }
+        setTimeout(flip2Back, 900);
+      }
     }
   }
+};
+
+winGame = function() {
+    $('#hint').remove();
+    saison.summer = true;
+    saveGame();
+    $('#question').append('<h3>Congratulations on solving the puzzle. Summer is free.</h3>')
+    if (saison.winter) {
+        $('#hint-place').append('<h2 id="hint">Thank you for setting us all free.</h2>');
+    } else {
+      $('#hint').remove();
+      $('#hint-place').append('<h2 id="hint">Thank you! Now please release me, Winter.</h2>');
+    }
+    $('#question').append('<button type=button id="submit" class="win">FIN</button>');
+    $('#submit').on({'click': function() {
+        portraits();
+        $('tr').children().remove();
+        newBoard();
+    }});
 };
