@@ -42,6 +42,9 @@ renderSeasons = function() {
       saison.spring = true;
       $('#spring').remove();
       $('#autumn').append('<img id=\"spring\" src=\"img/spring.png\"/>');
+      $('#spring').on({'click': function() {
+        window.location.href = './spring.html';
+      }});
   }});
   }
 };
