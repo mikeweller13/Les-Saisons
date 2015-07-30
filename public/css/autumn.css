@@ -32,10 +32,10 @@ body {
 .season {
   position: relative;
   display: inline;
-  margin-left: 150px;
+  margin-left: 15px;
 }
 
-#autumn {
+#autumn, #spring {
   height: 447px;
   width: 240px;
 }

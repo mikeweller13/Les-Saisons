@@ -56,8 +56,7 @@ memory_card_shuffle = function(){
   console.log(deck);
 };
 portraits = function() {
-  $('#start-place').children().remove();
-  // $('#start-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
+  $('#hint-place').children().remove();
     if (saison.summer) {
         $('#start-place').append('<img id="start" src="img/summer.png"/>');
     } else {
@@ -103,11 +102,12 @@ function newBoard() {
 };
 
 $('#hint-place').children().remove();
+$('#hint-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
 if (saison.winter) {
-  $('#hint-place').append('<img id="winter-link" src="img/winter.png"/>');
-  $('#hint-place').append('<h2 id="hint">Now that I am free, I can help you solve the puzzle.</h2>');
+  $('#hint-place').prepend('<img id="winter-link" src="img/winter.png"/>');
+  $('#hint-place').append('<h2 id="hint">Now that I am free, </br>I can help you solve the puzzle.</h2>');
 } else {
-  $('#hint-place').append('<img id="winter-link" src="img/winterbw.png"/>');
+  $('#hint-place').prepend('<img id="winter-link" src="img/winterbw.png"/>');
 };
 $('#winter-link').on({'click': function() {
   window.location.href = './winter.html';

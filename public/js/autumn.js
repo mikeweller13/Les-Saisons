@@ -33,17 +33,19 @@ renderSeasons = function() {
   $('#winter').append('<img id=\"winter\" src=\"img/winterbw.png\"/>');
   };
   // win scenario
-  $('#spring').on({'click': function() {
-    if (saison.winter && saison.summer) {
-      saison.spring = true;
-      renderSeasons();
-    };
-  }});
 
-  if (saison.spring){
-    $('#spring').append('<img id=\"spring\" src=\"img/spring.png\"/>');
+  if (!(saison.winter && saison.summer)){
+    $('#autumn').append('<img id=\"spring\" src=\"img/springbw.png\"/>');
   } else {
-    $('#spring').append('<img id=\"spring\" src=\"img/springbw.png\"/>');
+    $('#autumn').append('<img id=\"spring\" src=\"img/springbwbutton.png\"/>');
+    $('#spring').on({'click': function() {
+      saison.spring = true;
+      $('#spring').remove();
+      $('#autumn').append('<img id=\"spring\" src=\"img/spring.png\"/>');
+      $('#spring').on({'click': function() {
+        window.location.href = './spring.html';
+      }});
+  }});
   }
 };
 

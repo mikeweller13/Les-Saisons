@@ -32,13 +32,13 @@ h1{
 }
 
 #autumn-icon {
-  background-image: url("../img/autumn.png");
+  background-image: url("../img/autumn-plain.png");
   display: inline;
   margin-left: 250px;
 }
 
 #spring-icon {
-  background-image: url("../img/spring.png");
+  background-image: url("../img/spring-plain.png");
   display: inline;
   margin-left: 500px;
 }

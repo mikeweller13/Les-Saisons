@@ -37,14 +37,14 @@ var newGameMessage = '<h2 id="begin">Click my portrait to begin... </br></br>Cou
 var begin = function() {
 
     $('#hint-place').children().remove();
+    $('#hint-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
     if (saison.summer) {
-        $('#hint-place').append('<h2 id="hint">Now that I am free, I can help you solve the riddle.</h2>');
-        $('#hint-place').append('<img id="summer-link" src="img/summer.png"/>');
+        $('#hint-place').append('<h2 id="hint">Now that I am free, </br>I can help you solve the riddle.</h2>');
+        $('#hint-place').prepend('<img id="summer-link" src="img/summer.png"/>');
     } else {
-        $('#hint-place').append('<img id="summer-link" src="img/summerbw.png"/>');
+        $('#hint-place').prepend('<img id="summer-link" src="img/summerbw.png"/>');
     };
     $('.erasable').children().remove();
-    // $('#start-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
     if (saison.winter) {
         $('#start-place').append('<img id="start" src="img/winter.png"/>');
         $('h1').show();

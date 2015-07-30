@@ -74,11 +74,13 @@ td {
 }
 
 #hint-place {
-/*  margin: 10px;
-  width: 200px;*/
   position: relative;
   float: right;
   transform: scale(0.9);
+}
+
+#autumn-link {
+  transform: scale(0.5);
 }
 
 #question {
@@ -93,7 +95,13 @@ h1 {
   padding-bottom: 30px;
 }
 
-h2, h3 {
+h2 {
+  font-family: "Open Sans Condensed", sans-serif;
+  color: white;
+  font-size: 22px;
+}
+
+h3 {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 22px;
   color: white;
