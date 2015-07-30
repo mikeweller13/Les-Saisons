@@ -207,7 +207,7 @@ winGame = function() {
       $('#hint').remove();
       $('#hint-place').append('<h2 id="hint">Thank you! Now please release me, Winter.</h2>');
     }
-    $('#question').append('<button type=button id="submit" class="win">FIN</button>');
+    // $('#question').append('<button type=button id="submit" class="win">FIN</button>');
     $('#submit').on({'click': function() {
         portraits();
         $('tr').children().remove();
