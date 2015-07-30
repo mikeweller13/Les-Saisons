@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -10,7 +11,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/*', function(request, response) {
-  response.send('404: This page not found.');
+  response.sendFile(path.join(__dirname,'/public/404.html'));
 });
 
 app.listen(app.get('port'), function() {
