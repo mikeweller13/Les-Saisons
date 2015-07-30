@@ -39,7 +39,7 @@ var begin = function() {
     $('#hint-place').children().remove();
     $('#hint-place').append('<img id=\"autumn-link\" src=\"img/autumn.png\"/>');
     if (saison.summer) {
-        $('#hint-place').prepend('<h2 id="hint">Now that I am free, I can help you solve the riddle.</h2>');
+        $('#hint-place').append('<h2 id="hint">Now that I am free, </br>I can help you solve the riddle.</h2>');
         $('#hint-place').prepend('<img id="summer-link" src="img/summer.png"/>');
     } else {
         $('#hint-place').prepend('<img id="summer-link" src="img/summerbw.png"/>');
