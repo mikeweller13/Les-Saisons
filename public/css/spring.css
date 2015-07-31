@@ -1,14 +1,15 @@
-body{
+body {
   background-color: #ECDDC6;
   width: 100%;
 }
 
-h1{
+h1 {
   text-align: center;
   font-family: "Berkshire Swash";
-
+  font-size: 52px;
 }
-#wrapper{
+
+#wrapper {
   background: #f1e767;
   background: -moz-linear-gradient(-45deg, #f1e767 0%, #94c9a3 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, #f1e767), color-stop(100%, #94c9a3));
@@ -22,7 +23,6 @@ h1{
   border: 2px dashed white;
   box-shadow: 0 0 0 3px #94C9A3, 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
   padding: 40px;
- /* overflow: auto;*/
   height: 600px;
 }
 
@@ -74,10 +74,6 @@ h1{
   left: 0;
   z-index:1;
   display: inline-block;
-}
-
-.icon:hover {
-  transform: scale(2.0);
 }
 
 .dancing-icon {
