@@ -1,3 +1,5 @@
+Mike Weller branched this on 4/4/16.
+
 Summer page: to create a random array for the cards. I kindly stole this algorithum from Fisher-Yates shuffle.
 
 http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
